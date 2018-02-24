@@ -7,7 +7,8 @@ package linear.linkedList;
  给定链表 1->4->3->2->5->2->null，并且 x=3
  返回 1->2->2->4->3->5->null
 
-
+   解题思路：
+    两个链表，小于x的放左链表，大于x的放右链表，然后两个链表联合起来
  * Created by conleyzhu on 2018/2/24.
  */
 public class PartitionList {
