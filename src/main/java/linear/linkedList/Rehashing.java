@@ -37,7 +37,9 @@ package linear.linkedList;
  *
  * Created by Conley on 2018/2/25.
  * 解题思路：
- *
+ *      1）建立一个两倍大小的哈希表
+ *      2）遍历原来的hash表，进行rehash，找到对应的位置即可
+ *      3）注意，新的hash表也可能有冲突，要处理这种情况
  *
  */
 public class Rehashing {
