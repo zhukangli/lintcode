@@ -3,9 +3,9 @@ package linear.linkedList;
 import entity.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /**给出一棵二叉树，返回其节点值的层次遍历（逐层从左往右访问）
  * 样例
@@ -94,7 +94,8 @@ public class BTreeLevelOrderTraversal {
         if(root == null){
             return ret;
         }
-        Queue<TreeNode> que = new ArrayBlockingQueue<TreeNode>(1024);
+        //因为ArrayBlockingQueue是JUC的类，所以用linkedList代替
+        Queue<TreeNode> que = new LinkedList<TreeNode>();
         que.add(root);
         int len = 1;
         while(!que.isEmpty()){
