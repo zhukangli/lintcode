@@ -1,5 +1,7 @@
 package linear.linkedList;
 
+import entity.ListNode;
+
 /**
  *
  *

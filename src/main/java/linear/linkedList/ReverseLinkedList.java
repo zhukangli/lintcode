@@ -1,5 +1,7 @@
 package linear.linkedList;
 
+import entity.ListNode;
+
 /**
  * 翻转一个链表
  * 样例
