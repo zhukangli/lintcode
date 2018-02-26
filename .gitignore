@@ -54,3 +54,4 @@ dkms.conf
 #java
 *.classes
 target/*
+*.idea
