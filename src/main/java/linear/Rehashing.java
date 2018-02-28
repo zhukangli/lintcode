@@ -1,4 +1,4 @@
-package linear.linkedList;
+package linear;
 
 import entity.ListNode;
 

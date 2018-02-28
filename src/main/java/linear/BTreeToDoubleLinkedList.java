@@ -1,4 +1,4 @@
-package linear.linkedList;
+package linear;
 
 /**将二叉查找树转换成双链表
  * 将一个二叉查找树按照中序遍历转换成双向链表。

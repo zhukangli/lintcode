@@ -1,4 +1,4 @@
-package linear.linkedList;
+package linear;
 
 /**
  * 在数据结构中，哈希函数是用来将一个字符串（或任何其他类型）转化为
