@@ -1,4 +1,4 @@
-package linear.linkedList;
+package linear;
 
 /**给定一个排序的整数数组（升序）和一个要查找的整数target，
  * 用O(logn)的时间查找到target第一次出现的下标（从0开始），

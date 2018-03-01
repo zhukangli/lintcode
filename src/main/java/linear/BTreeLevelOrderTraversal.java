@@ -1,26 +1,28 @@
-package linear.linkedList;
+package linear;
 
 import entity.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**给出一棵二叉树，返回其节点值的层次遍历（逐层从左往右访问）
  * 样例
  给一棵二叉树 {3,9,20,#,#,15,7} ：
 
-               3
-              / \
-             9  20
-               /  \
-              15   7
+ 3
+ / \
+ 9  20
+ /  \
+ 15   7
  返回他的分层遍历结果：
 
-             [
-                 [3],
-                 [9,20],
-                 [15,7]
-             ]
+ [
+ [3],
+ [9,20],
+ [15,7]
+ ]
  *
  * 解题思路1：
  *      1）递归遍历，先遍历左子节点，每遍历一下就创建list，把节点加入list
@@ -76,6 +78,43 @@ public class BTreeLevelOrderTraversal {
             //注意这里level传的是int类型，不是引用类型，level值不会因为遍历左子节点而改变
             traverse(list, node.right, level + 1);
         }
+    }
+
+
+    /**
+     * 这个方法比较容易理解，利用queue
+     * 解题思路：
+     *      1）利用queue来存储字节点，原则上栈也是可以
+     *      2）拿出queue中的子节点来遍历，放入list
+     * @param root
+     * @return
+     */
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        if(root == null){
+            return ret;
+        }
+        //因为ArrayBlockingQueue是JUC的类，所以用linkedList代替
+        Queue<TreeNode> que = new LinkedList<TreeNode>();
+        que.add(root);
+        int len = 1;
+        while(!que.isEmpty()){
+            List<Integer> base = new ArrayList<Integer>();
+            len = que.size();
+            for(int i =0;i<len;len++){
+                TreeNode tmp = que.peek();
+                base.add(tmp.val);
+                que.poll();
+                if(tmp.left != null){
+                    que.offer(tmp.left);
+                }
+                if(tmp.right != null){
+                    que.offer(tmp.right);
+                }
+            }
+            ret.add(base);
+        }
+        return ret;
     }
 
 }
